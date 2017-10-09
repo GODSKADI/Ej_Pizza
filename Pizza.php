@@ -2,9 +2,29 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>Haz tu pizza</title>
+		<style>
+			h1{
+				text-align: center;
+				background-color: silver;
+			}
+			form{
+				background-color: silver; 
+			}
+		</style>
 	</head>
 	<body>
+		<script type="text/javascript">
+		function tu_pedido(){
+			echo "Hola";
+		}
+		function processar_datos($ingredientes){
+			global $eleccion_ingredientes;
+			$precio_total = 5.0;
+			$ingredientes_seleccionados = "";
+		}
+		</script>
+
 		<?php
 		$eleccion_ingredientes = array(
 			0=> 'Masa Gruesa',
@@ -21,24 +41,16 @@
 			);
 
 		$size_length = sizeof($eleccion_ingredientes);
+		echo "<h1>Haz tu pizza</h1>";
 		echo "<form>";
+		echo "<h2>Ingredientes</h2>";
 		for($i=0; $i<$size_length; $i++){
-			echo "<p>".$eleccion_ingredientes[$i]."<input type='checkbox' name='ingredientes' value='".$i."'></p>";
-
+			echo "<p>".$eleccion_ingredientes[$i]."<input type='checkbox' name='".$i."' value='".$i."'></p>\n";
 		}
+		echo "<button value='submit'>Pedir</button>";
 		echo "</form>";
 
-		function mostrar_ingredientes($ingredientes){
-			global $eleccion_ingredientes;
 
-		}
-		function processar_datos($ingredientes){
-			global $eleccion_ingredientes;
-			$precio_total = 5.0;
-			$ingredientes_seleccionados = "";
-
-
-		}
 		?>
 	</body>
 </html>
